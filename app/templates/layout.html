@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='layout.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
+    {% block link %}{% endblock %}
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<section class="main">
+        <div class="navbar">
+            <div class="logo">
+                <h1 id="logo">
+                    CovidCom
+                </h1>
+            </div>
+            <div class="name">
+                <div class="avatar">
+                    <h3>S</h3>
+                </div>
+                <h2 id="name">
+                    Sarthak
+                </h2>
+            </div>
+        </div>
+	{% block content %}{% endblock %}
+	</section>	
+</body>
+<script src="{{ url_for('static',filename='js/app.js') }}"></script> 
+</html>
