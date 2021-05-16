@@ -5,16 +5,17 @@
 }
 
 body {
-  background-color: #23272A;
+  background: #23272A;
 }
 
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: white;
   padding: 10px 0;
+  border-bottom: 1px solid yellowgreen;
 }
 
 .navbar .logo {
@@ -22,6 +23,7 @@ body {
   color: #23272A;
   font-size: 22px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .navbar .name {
@@ -45,4 +47,196 @@ body {
   font-family: sans-serif;
   opacity: 0.8;
   font-size: 19px;
+}
+
+.resources {
+  position: relative;
+  z-index: 1;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.resources #head {
+  font-size: 45px;
+  color: white;
+  font-family: 'poppins';
+}
+
+.resources .container {
+  width: 100%;
+  display: grid;
+  margin-top: 30px;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 2.5%;
+}
+
+.resources .container .vaccines {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #171717;
+  box-shadow: 2px 0px 39px -12px rgba(0, 0, 0, 0.75);
+  padding: 20px 20px 50px 20px;
+  border-radius: 13px;
+}
+
+.resources .container .vaccines h1 {
+  font-size: 26px;
+  font-family: 'poppins';
+  color: white;
+  margin-bottom: 20px;
+}
+
+.resources .container .vaccines button {
+  outline: none;
+  padding: 8px 0;
+  width: 120px;
+  border: 1px black solid;
+  font-weight: bold;
+  border-radius: 25px;
+  background: #8418e2;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  font-family: sans-serif;
+  margin: 15px 0;
+}
+
+.resources .container .vaccines button a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.modal {
+  display: flex;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #23272A;
+  z-index: 0;
+}
+
+.modal .vaccine-modal {
+  width: 300px;
+  height: 500px;
+  padding: 30px 20px;
+  background-color: #171717;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal .vaccine-modal .links {
+  height: 100%;
+}
+
+.modal .vaccine-modal .links .link a {
+  color: lightblue;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-family: sans-serif;
+}
+
+.modal .vaccine-modal .close button {
+  outline: none;
+  padding: 8px 0;
+  width: 120px;
+  border: 1px black solid;
+  font-weight: bold;
+  border-radius: 25px;
+  background: #8418e2;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.open-modal {
+  visibility: visible;
+  z-index: 2;
+  opacity: 0.95;
+}
+
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.add #head {
+  font-size: 45px;
+  color: white;
+  font-family: 'poppins';
+}
+
+.add #special {
+  color: #8418e2;
+}
+
+.add p {
+  font-size: 16px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  width: 400px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.add .form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 300px;
+  background-color: #171717;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 2px 0px 39px -12px rgba(0, 0, 0, 0.75);
+}
+
+.add label {
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.add input {
+  padding: 8px 5px;
+  outline: none;
+  border: 1px solid black;
+  font-size: 14px;
+  font-family: 'poppins';
+  border-radius: 6px;
+}
+
+.add .sub {
+  width: 150px;
+  padding: 8px 20px;
+  outline: none;
+  background-color: #8418e2;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #23272A;
+  border-radius: 20px;
+  margin-top: 30px;
+  text-align: center;
+  align-self: center;
+  font-family: 'poppins';
+  cursor: pointer;
 }

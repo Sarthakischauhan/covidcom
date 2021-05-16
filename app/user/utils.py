@@ -1,16 +1,14 @@
 from math import dist
-import geocoder
 import geopy
 import geopy.distance
 from geopy.geocoders import Nominatim
 import haversine as hs
-import time 
-import sel
-
-
-def getLocation():
-    s = geocoder.ip("me")
-    return s.latlng
+import time
+from oauth2client import client 
+import requests
+from bs4 import BeautifulSoup
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 def rangingUsers(loc1,loc2):
     point = geopy.Point(loc1,loc2)
@@ -38,5 +36,26 @@ def loctoAddress(latitude,longitude,language="en"):
         return loctoAddress(latitude, longitude)
 
 
-def scrapeCowin(state,district):
+def scrapeCowin(state=None,district=None):
     url = "https://dashboard.cowin.gov.in/"
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content,'html.parser')
+
+    innerBox=soup.find_all("div",{"class_":["inner", "innerbox"]})
+    print(innerBox)
+
+
+def authorizeGspread():
+    scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json",scope)
+    client = gspread.authorize(creds)
+    return client
+
+def getvaclink():
+    client = authorizeGspread()
+    sheet = client.open("Links_for_Vaccine").sheet1
+    return sheet.col_values(1)[1:]
+
+def addresourcelink():
+    client = authorizeGspread()
+    sheet = client.open("Waitlist").sheet1

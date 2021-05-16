@@ -8,6 +8,38 @@ CovidCom
 {% endblock %}
 
 
-{% block contact %}
+{% block content %}
+<div class="resources">
+    <h1 id="head">Resources</h1>
+    <div class="container">
+        <div class="vaccines">
+            <h1>Vaccine Info</h1>
+            <button class="check">
+                <a>Check</a>
+            </button>
+            <button class="discussion">
+                <a href="">Discussion</a>
+            </button>
+            <button class="add-link">
+                <a href="/addLink">Add a link</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="vaccine-modal">
+        <div class="links">
+            {% for link in vac_link %}
+                <div class="link">
+                    <a href="{{ link }}">{{ link }}</a>
+                </div>
+            {% endfor %}   
+        </div>     
+        <div class="close">
+            <button>close</button>
+        </div>
+    </div>
+
+</div>
 {% endblock %}
 
