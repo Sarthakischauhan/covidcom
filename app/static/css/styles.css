@@ -142,11 +142,28 @@ body {
   height: 100%;
 }
 
+.modal .vaccine-modal .links #msg {
+  font-size: 14px;
+  font-family: 'poppins';
+  color: #fa3d3d;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal .vaccine-modal .links .link {
+  margin-bottom: 5px;
+}
+
 .modal .vaccine-modal .links .link a {
   color: lightblue;
   font-size: 18px;
   margin-bottom: 6px;
   font-family: sans-serif;
+}
+
+.modal .vaccine-modal .links hr {
+  margin-top: 4px;
+  height: 1px;
 }
 
 .modal .vaccine-modal .close button {

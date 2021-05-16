@@ -29,9 +29,11 @@ CovidCom
 <div class="modal">
     <div class="vaccine-modal">
         <div class="links">
+            <p id="msg">Please Verify Before Using</p>
             {% for link in vac_link %}
                 <div class="link">
                     <a href="{{ link }}">{{ link }}</a>
+                    <hr>
                 </div>
             {% endfor %}   
         </div>     

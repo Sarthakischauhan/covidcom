@@ -1,4 +1,11 @@
-from flask import Blueprint,request,render_template,session
+from flask import (
+    Blueprint,
+    request,
+    render_template,
+    session,
+    url_for,
+    redirect
+    )
 from app.user.utils import *
 
 
@@ -16,4 +23,9 @@ def home():
 @users_bp.route("/addLink",methods=["GET","POST"])
 def add_link():
     type_ = request.args.get("type","vaccine")
+    form = request.form
+    if request.method=="POST":
+       link = form.get("link")
+       addresourcelink(type_=type_,link=link)
+       return redirect(url_for("routes.home"))
     return render_template("add-link.html",type_=type_)

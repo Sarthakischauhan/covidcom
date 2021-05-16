@@ -56,6 +56,8 @@ def getvaclink():
     sheet = client.open("Links_for_Vaccine").sheet1
     return sheet.col_values(1)[1:]
 
-def addresourcelink():
+def addresourcelink(type_,link):
     client = authorizeGspread()
     sheet = client.open("Waitlist").sheet1
+    insertRow = [link,type_]
+    sheet.append_row(insertRow)
