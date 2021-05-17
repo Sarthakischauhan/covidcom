@@ -1,7 +1,3 @@
-window.onload = function() {
-    getLocation()
-};
-
 function getLocation(){
     var startPos;
     var geoOptions = {
@@ -22,13 +18,45 @@ function getLocation(){
 }
 
 const modal = document.querySelector(".modal");
-const openbtn = document.querySelector(".check");
-const closebtn = document.querySelector(".close");
+const openbtn = document.querySelectorAll(".check");
+const closebtn = document.querySelectorAll(".close");
+const vaccine = document.querySelector(".vaccine-modal");
+const oxygen = document.querySelector(".oxygen-modal");
+const plasma = document.querySelector(".plasma-modal");
 
-openbtn.addEventListener('click',function(){
-  modal.classList.add("open-modal");
-  console.log("run");
+
+openbtn.forEach(function(btn){
+  btn.addEventListener('click',function(){
+    modal.classList.add("open-modal");
+    if (btn.classList.contains("vaccine")){
+      vaccine.style.display="flex";
+    }
+    else if (btn.classList.contains("oxygen")){
+      oxygen.style.display="flex";
+    }
+    else if (btn.classList.contains("plasma")){
+      plasma.style.display = "flex";
+    } 
+  })
 })
+closebtn.forEach(function(btn){
+  btn.addEventListener('click',function(){
+    modal.classList.remove("open-modal");
+    if (btn.classList.contains("vaccine")){
+      vaccine.style.display="none";
+    }
+    else if (btn.classList.contains("oxygen")){
+      oxygen.style.display="none";
+    }
+    else if (btn.classList.contains("plasma")){
+      plasma.style.display = "none";
+    } 
+  })
+})
+
+
+
+
 
 
 closebtn.addEventListener('click',function(){

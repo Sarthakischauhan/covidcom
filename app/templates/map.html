@@ -14,7 +14,7 @@ CovidCom
     <div class="container">
         <div class="vaccines">
             <h1>Vaccine Info</h1>
-            <button class="check">
+            <button class="check vaccine">
                 <a>Check</a>
             </button>
             <button class="discussion">
@@ -22,6 +22,30 @@ CovidCom
             </button>
             <button class="add-link">
                 <a href="/addLink">Add a link</a>
+            </button>
+        </div>
+        <div class="oxygen">
+            <h1>Oxygen Info</h1>
+            <button class="check oxygen">
+                <a>Check</a>
+            </button>
+            <button class="discussion">
+                <a href="">Discussion</a>
+            </button>
+            <button class="add-link">
+                <a href="{{ url_for('routes.add_link',type='oxygen') }}">Add a link</a>
+            </button>
+        </div>
+        <div class="plasma">
+            <h1>Plasma Info</h1>
+            <button class="check plasma">
+                <a>Check</a>
+            </button>
+            <button class="discussion">
+                <a href="">Discussion</a>
+            </button>
+            <button class="add-link">
+                <a href="{{ url_for('routes.add_link',type='plasma') }}">Add a link</a>
             </button>
         </div>
     </div>
@@ -37,11 +61,38 @@ CovidCom
                 </div>
             {% endfor %}   
         </div>     
-        <div class="close">
+        <div class="close vaccine">
             <button>close</button>
         </div>
     </div>
-
+    <div class="oxygen-modal">
+        <div class="links">
+            <p id="msg">Please Verify Before Using</p>
+            {% for link in oxy_link %}
+                <div class="link">
+                    <a href="{{ link }}">{{ link }}</a>
+                    <hr>
+                </div>
+            {% endfor %}   
+        </div>     
+        <div class="close oxygen">
+            <button>close</button>
+        </div>
+    </div>
+    <div class="plasma-modal">
+        <div class="links">
+            <p id="msg">Please Verify Before Using</p>
+            {% for link in plsm_link %}
+                <div class="link">
+                    <a href="{{ link }}">{{ link }}</a>
+                    <hr>
+                </div>
+            {% endfor %}   
+        </div>     
+        <div class="close plasma">
+            <button>close</button>
+        </div>
+    </div>
 </div>
 {% endblock %}
 

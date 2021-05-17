@@ -51,10 +51,12 @@ def authorizeGspread():
     client = gspread.authorize(creds)
     return client
 
-def getvaclink():
+def getreslink():
     client = authorizeGspread()
-    sheet = client.open("Links_for_Vaccine").sheet1
-    return sheet.col_values(1)[1:]
+    vaccine = client.open("Links_for_Vaccine").sheet1
+    oxygen = client.open("Links_for_oxygen").sheet1
+    plasma = client.open("Links_for_plasma").sheet1
+    return (vaccine.col_values(1)[1:],oxygen.col_values(1)[1:],plasma.col_values(1)[1:])
 
 def addresourcelink(type_,link):
     client = authorizeGspread()

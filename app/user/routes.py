@@ -16,8 +16,8 @@ def home():
     # lat,long=request.cookies.values()
     # address = loctoAddress(lat,long)["address"]
     # state,district = address["state_district"],address["state"]
-    vac_link = getvaclink()
-    return render_template("map.html",vac_link=vac_link)
+    vac_link,oxy_link,plsm_link= getreslink()
+    return render_template("map.html",vac_link=vac_link,oxy_link=oxy_link,plsm_link=plsm_link)
 
 
 @users_bp.route("/addLink",methods=["GET","POST"])
