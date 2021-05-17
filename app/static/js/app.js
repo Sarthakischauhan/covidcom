@@ -53,12 +53,3 @@ closebtn.forEach(function(btn){
     } 
   })
 })
-
-
-
-
-
-
-closebtn.addEventListener('click',function(){
-  modal.classList.remove("open-modal");
-})
