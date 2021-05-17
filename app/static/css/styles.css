@@ -18,12 +18,13 @@ body {
   border-bottom: 1px solid yellowgreen;
 }
 
-.navbar .logo {
+.navbar .logo h1 a {
   font-family: 'poppins';
   color: #23272A;
-  font-size: 22px;
+  font-size: 35px;
   margin-left: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .navbar .name {
@@ -240,7 +241,7 @@ body {
 
 .modal .vaccine-modal .links .link a, .modal .oxygen-modal .links .link a, .modal .plasma-modal .links .link a {
   color: lightblue;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 6px;
   font-family: sans-serif;
   word-break: break-all;
@@ -285,6 +286,18 @@ body {
   font-family: 'poppins';
 }
 
+@media (max-width: 768px) {
+  .add #head {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 540px) {
+  .add #head {
+    font-size: 28px;
+  }
+}
+
 .add #special {
   color: #8418e2;
 }
@@ -299,6 +312,19 @@ body {
   word-wrap: break-word;
 }
 
+@media (max-width: 540px) {
+  .add p {
+    width: 300px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .add p {
+    width: 200px;
+  }
+}
+
 .add .form {
   display: flex;
   flex-direction: column;
@@ -310,12 +336,31 @@ body {
   box-shadow: 2px 0px 39px -12px rgba(0, 0, 0, 0.75);
 }
 
+@media (max-width: 540px) {
+  .add .form {
+    width: 250px;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .add .form {
+    width: 200px;
+  }
+}
+
 .add label {
   font-size: 20px;
   color: white;
   font-family: sans-serif;
   margin-bottom: 6px;
   font-weight: bold;
+}
+
+@media (max-width: 540px) {
+  .add label {
+    font-size: 18px;
+  }
 }
 
 .add input {
@@ -325,6 +370,13 @@ body {
   font-size: 14px;
   font-family: 'poppins';
   border-radius: 6px;
+}
+
+@media (max-width: 540px) {
+  .add input {
+    font-size: 13px;
+    font-weight: normal;
+  }
 }
 
 .add .sub {
@@ -341,4 +393,63 @@ body {
   align-self: center;
   font-family: 'poppins';
   cursor: pointer;
+}
+
+@media (max-width: 540px) {
+  .add .sub {
+    width: 100px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .add .sub {
+    font-weight: normal;
+  }
+}
+
+.community {
+  display: flex;
+  margin-top: 80px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.community #head {
+  font-size: 45px;
+  font-family: 'poppins';
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .community #head {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 540px) {
+  .community #head {
+    font-size: 28px;
+  }
+}
+
+.community #progress {
+  width: 450px;
+  height: 400px;
+}
+
+@media (max-width: 520px) {
+  .community #progress {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.community #progress-head {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #8418e2;
+  opacity: 1;
 }

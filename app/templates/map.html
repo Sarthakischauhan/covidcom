@@ -17,9 +17,9 @@ CovidCom
             <button class="check vaccine">
                 <a>Check</a>
             </button>
-            <button class="discussion">
+            <!-- <button class="discussion">
                 <a href="">Discussion</a>
-            </button>
+            </button> -->
             <button class="add-link">
                 <a href="/addLink">Add a link</a>
             </button>
@@ -29,9 +29,9 @@ CovidCom
             <button class="check oxygen">
                 <a>Check</a>
             </button>
-            <button class="discussion">
+            <!-- <button class="discussion">
                 <a href="">Discussion</a>
-            </button>
+            </button> -->
             <button class="add-link">
                 <a href="{{ url_for('routes.add_link',type='oxygen') }}">Add a link</a>
             </button>
@@ -41,9 +41,9 @@ CovidCom
             <button class="check plasma">
                 <a>Check</a>
             </button>
-            <button class="discussion">
+            <!-- <button class="discussion">
                 <a href="">Discussion</a>
-            </button>
+            </button> -->
             <button class="add-link">
                 <a href="{{ url_for('routes.add_link',type='plasma') }}">Add a link</a>
             </button>
@@ -93,6 +93,11 @@ CovidCom
             <button>close</button>
         </div>
     </div>
+</div>
+<div class="community">
+    <h1 id="head">Community</h1>
+    <img src="{{ url_for('static',filename='img/progress.svg') }}" alt="" id="progress">
+    <h3 id="progress-head">Covid Community In Making</h3>
 </div>
 {% endblock %}
 
