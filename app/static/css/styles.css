@@ -408,7 +408,7 @@ body {
   }
 }
 
-.community {
+.community, .join {
   display: flex;
   margin-top: 80px;
   flex-direction: column;
@@ -416,37 +416,42 @@ body {
   margin-bottom: 80px;
 }
 
-.community #head {
+.community #head, .join #head {
   font-size: 45px;
   font-family: 'poppins';
   color: white;
 }
 
 @media (max-width: 768px) {
-  .community #head {
+  .community #head, .join #head {
     font-size: 35px;
   }
 }
 
 @media (max-width: 540px) {
-  .community #head {
+  .community #head, .join #head {
     font-size: 28px;
   }
 }
 
-.community #progress {
+.community #location, .join #location {
+  width: 400px;
+  height: 350px;
+}
+
+.community #progress, .join #progress {
   width: 450px;
   height: 400px;
 }
 
 @media (max-width: 520px) {
-  .community #progress {
+  .community #progress, .join #progress {
     width: 300px;
     height: 300px;
   }
 }
 
-.community #progress-head {
+.community #progress-head, .join #progress-head {
   font-size: 18px;
   font-family: sans-serif;
   font-weight: bold;

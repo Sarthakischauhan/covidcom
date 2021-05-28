@@ -1,3 +1,4 @@
 __pycache__/
 setup.sh
 creds.json
+app/static/scss
